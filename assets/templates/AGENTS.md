@@ -23,7 +23,7 @@
 | 路径 | 是什么 | 什么时候看 |
 |---|---|---|
 | `related_work/` | 相关文献，每篇 `paper.pdf` + `source/` | 要引用、要对比方法时 |
-| `复现/` | 重要 baseline 的复现，每个带一份复现报告 | 要确认 baseline 数字时 |
+| `reproduction/` | 重要 baseline 的复现，报告写在 `reproduction/<method>/report.md` | 要确认 baseline 数字时 |
 | `brainstorm.md` | 问题和假设是怎么聊出来的 | 想不通为什么这么设计时 |
 | `experiment/` | 实验代码 + 每一版结果 | 跑实验 |
 | `DataSet/` | 数据集，处理说明见 `dataset.md` | 要动数据时 |

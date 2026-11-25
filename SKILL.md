@@ -31,7 +31,7 @@ bash <skill>/scripts/init-project.sh <项目目录>
 | `AGENTS.md` | 项目总纲：在做什么、目录说明、硬规矩 | 每个新窗口**第一个读** |
 | `handoff.md` | 进度交接：到哪了、下一步、踩过的坑 | 每个新窗口**第二个读**；每个窗口结束前**更新** |
 | `related_work/` | 文献，每篇 `paper.pdf` + `source/` | 要引用、要对比方法时 |
-| `复现/` | baseline 复现，每个方法一份复现报告 | 要确认 baseline 数字时 |
+| `reproduction/` | baseline 复现，报告写在 `reproduction/<method>/report.md` | 要确认 baseline 数字时 |
 | `brainstorm.md` | 问题和假设是怎么讨论出来的，倒序记 | 提假设阶段写；想不通设计意图时读 |
 | `experiment/results.md` | 每一版实验一行：命名、指标、结论 | 每次实验后追加 |
 | `experiment/evaluation.md` | 标准化测评：数据、指标、可视化写死 | 建项目时定好；之后每次照着跑 |

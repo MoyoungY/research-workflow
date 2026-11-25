@@ -11,7 +11,7 @@ set -euo pipefail
 DEST="${1:?用法: init-project.sh <项目目录>}"
 TPL="$(cd "$(dirname "${BASH_SOURCE[0]}")/../assets/templates" && pwd)"
 
-mkdir -p "$DEST"/{related_work,复现,experiment,DataSet}
+mkdir -p "$DEST"/{related_work,reproduction,experiment,DataSet}
 cd "$DEST"
 
 put() { # $1=模板名 $2=目标路径
@@ -57,7 +57,7 @@ cat <<EOF
   2. 抓文献：
        bash $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/fetch-paper.sh <arxiv-id> <目录名>
 
-  3. **先复现再找问题** —— 挑两三篇有开源代码的跑通，写 复现/<方法>/复现报告.md
+  3. **先复现再找问题** —— 挑两三篇有开源代码的跑通，写 reproduction/<method>/report.md
      论文只报平均和成功配置，卡在哪、哪个 setting 崩了，只有自己跑才看得见
 
   4. 复现跑完之后再进 brainstorm.md 提假设

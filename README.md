@@ -28,7 +28,7 @@ Cursor 用户放 `~/.cursor/skills/` 或 `.agents/skills/`。
 ├── handoff.md             进度交接 —— 每个窗口结束前更新，下一个窗口靠它接上
 ├── brainstorm.md          问题和假设的讨论记录，倒序
 ├── related_work/          文献，每篇 paper.pdf + source/
-├── 复现/                   baseline 复现 + 复现报告
+├── reproduction/          baseline 复现，每个方法一份 report.md
 ├── experiment/
 │   ├── results.md         每版实验一行，不覆盖不删
 │   └── evaluation.md      标准化测评，防止临时挑指标
