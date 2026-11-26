@@ -9,16 +9,17 @@
 set -euo pipefail
 
 DEST="${1:?用法: init-project.sh <项目目录>}"
-TPL="$(cd "$(dirname "${BASH_SOURCE[0]}")/../assets/templates" && pwd)"
+SCRIPTS="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TPL="$SCRIPTS/../assets/templates"
 
 mkdir -p "$DEST"/{related_work,reproduction,experiment,DataSet}
 cd "$DEST"
 
 put() { # $1=模板名 $2=目标路径
-  if [ -e "$2" ]; then
+  if [ -e "$2" ] || [ -L "$2" ]; then
     echo "  ·  $2  已存在，跳过"
   else
-    cp "$TPL/$1" "$2"
+    cp -n "$TPL/$1" "$2"
     echo "  +  $2"
   fi
 }
@@ -30,20 +31,7 @@ put dataset.md     dataset.md
 put results.md     experiment/results.md
 put evaluation.md  experiment/evaluation.md
 
-# .gitignore：数据和大文件别进版本库
-if [ ! -e .gitignore ]; then
-  cat > .gitignore <<'EOF'
-DataSet/
-related_work/*/paper.pdf
-related_work/*/source/
-experiment/*/checkpoints/
-experiment/*/*.pt
-*.orig
-.shot-tmp/
-__pycache__/
-EOF
-  echo "  +  .gitignore"
-fi
+put gitignore.txt .gitignore
 
 cat <<EOF
 
@@ -55,7 +43,7 @@ cat <<EOF
      那是整个项目的锚，Agent 靠它判断什么该做什么不该做
 
   2. 抓文献：
-       bash $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/fetch-paper.sh <arxiv-id> <目录名>
+       bash "$SCRIPTS/fetch-paper.sh" <arxiv-id> <目录名>
 
   3. **先复现再找问题** —— 挑两三篇有开源代码的跑通，写 reproduction/<method>/report.md
      论文只报平均和成功配置，卡在哪、哪个 setting 崩了，只有自己跑才看得见
