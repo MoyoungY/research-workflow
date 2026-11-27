@@ -4,15 +4,15 @@ import { mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 
-// Snapshot of a new project produced by init-project.sh at revision 198b77d.
+// Project scaffold snapshot, including the Codex routing, handoff and results templates.
 const originalFiles = {
   ".gitignore": "38b93e3f755de57d8a3c9814f55a4c5372c011f8de541c44587637cb7c30e7fc",
-  "AGENTS.md": "464775289e66434c62c88e5e9e7bdf5338f55a9c5d7a8dfc66200ea12dd07ee2",
+  "AGENTS.md": "fc87768e27caf8dada63641925828bb80cbcf7d9932889113d838c26a7a2f5a0",
   "brainstorm.md": "14aa23a706c9c86a02564f5b0b4ad918e52a06efacc290262bafec3da4a5a772",
   "dataset.md": "11571d1acb8e454ef53dad8ee25a0b9d06393c033cd97c1fcc669249f537c2fe",
   "experiment/evaluation.md": "06e2e61ce3cfd27580c97d3443886188f076356184cef1a7967e931035ad620b",
-  "experiment/results.md": "e51c6fe1f258e539bf34b8330035b01ed9f11ac1f549900027ac672b4bff7c05",
-  "handoff.md": "101cd58e1b9428ec0ab9bcf611ddbda5073a182bf95810755abdf68572e5c359",
+  "experiment/results.md": "2c3dd7fa482a10e8a8818c667c568838464635cde823d29c7db7b6fd8832dfdd",
+  "handoff.md": "6fa7a35aa511afaaffe7f9d23f5d2bc29c60a297c41c22ba87bf0fcf7695982e",
 };
 const originalDirectories = ["DataSet", "experiment", "related_work", "reproduction"];
 
